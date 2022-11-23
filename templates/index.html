@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="template.html" rel="import" >
+    
+    <title>Drug predictor</title>
+    
+   
+</head>
+<body>
+    <form action="{{url_for('predict')}}" method="post">
+        <input type="text" name="Age" placeholder="Enter your age"></input>
+        <label name="Sex">Gender</label>
+        <select name="Sex" >
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+        </select>
+        <label name="BP">BP</label>
+        <select name="BP" >
+            <option value="0">LOW</option>
+            <option value="1">NORMAL</option>
+            <option value="2">HIGH</option>
+        </select>
+        <label name="Cholesterol">Cholesterol</label>
+        <select name="Cholesterol" >
+            <option value="0">Normal</option>
+            <option value="1">High</option>
+        </select>
+        <label name="Na_to_K">Na_to_K</label>
+        <input type="text" name="Na_to_K" placeholder="Enter Na_to_K value"></input>
+        <button type="submit">Submit</button>
+    </form>
+    <h3><br>
+    {{prediction_text}}</h3>
+
+    
+</body>
+
+</html>
